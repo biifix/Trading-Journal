@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Card } from "@/components/ui/Card";
 import { Chip } from "@/components/ui/Chip";
 import { btnPrimary, btnSecondary, fieldClass } from "@/lib/styles";
+import { symbolGroups } from "@/lib/mock-data";
 
 function Field({ label, defaultValue }: { label: string; defaultValue: string }) {
   return (
@@ -52,7 +53,22 @@ export default function NewTradePage() {
                   <option>Forex</option>
                 </select>
               </div>
-              <Field label="Symbol" defaultValue="EURUSD" />
+              <div>
+                <label htmlFor="symbol" className="text-xs text-text-dim mb-1.5 block">
+                  Symbol
+                </label>
+                <select id="symbol" name="symbol" defaultValue="EURUSD" className={fieldClass}>
+                  {symbolGroups.map((group) => (
+                    <optgroup key={group.market} label={group.market}>
+                      {group.symbols.map((symbol) => (
+                        <option key={symbol} value={symbol}>
+                          {symbol}
+                        </option>
+                      ))}
+                    </optgroup>
+                  ))}
+                </select>
+              </div>
               <div>
                 <label className="text-xs text-text-dim mb-1.5 block">Direction</label>
                 <div className="flex h-10 rounded-lg border border-border overflow-hidden">

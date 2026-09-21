@@ -1,5 +1,12 @@
 import type { Trade, TradingAccount } from "./types";
 
+export const symbolGroups: { market: string; symbols: string[] }[] = [
+  { market: "Forex", symbols: ["EURUSD", "GBPUSD", "USDJPY", "AUDUSD", "USDCAD", "NZDUSD"] },
+  { market: "Metals", symbols: ["XAUUSD", "XAGUSD"] },
+  { market: "Indices", symbols: ["NAS100", "US30", "SPX500", "GER40"] },
+  { market: "Crypto", symbols: ["BTCUSD", "ETHUSD"] },
+];
+
 export const trades: Trade[] = [
   {
     id: "1",
