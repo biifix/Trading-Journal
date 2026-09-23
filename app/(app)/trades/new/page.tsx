@@ -50,14 +50,14 @@ export default function NewTradePage() {
               <div>
                 <label className="text-xs text-text-dim mb-1.5 block">Market Type</label>
                 <select className={fieldClass}>
-                  <option>Forex</option>
+                  <option>Futures</option>
                 </select>
               </div>
               <div>
                 <label htmlFor="symbol" className="text-xs text-text-dim mb-1.5 block">
                   Symbol
                 </label>
-                <select id="symbol" name="symbol" defaultValue="EURUSD" className={fieldClass}>
+                <select id="symbol" name="symbol" defaultValue="ES" className={fieldClass}>
                   {symbolGroups.map((group) => (
                     <optgroup key={group.market} label={group.market}>
                       {group.symbols.map((symbol) => (
